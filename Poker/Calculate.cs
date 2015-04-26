@@ -9,22 +9,16 @@ namespace Poker
     public class Calculator
     {
 
-        public enum HandRanks
+        private bool _IsAceAlsoOne = false;
+        
+        public Calculator(bool IsAceAlsoOne)
         {
-            RoyalFlush, 
-            StraightFlush, 
-            FourOfAKind, 
-            FullHouse, 
-            Flush, 
-            Straight, 
-            Three, 
-            TwoPair, 
-            Pair, 
-            HighCard
+            _IsAceAlsoOne = IsAceAlsoOne;
         }
 
         public class CalculatedHand
         {
+            
             public HandRanks Rank;
             public int HighCard;
         }

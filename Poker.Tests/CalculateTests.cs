@@ -92,7 +92,7 @@ namespace Poker.Tests
             string[] Hands = { "S9S8H7H8CA" };
             Poker.Calculator.CalculatedHand C = Calc.CalculateHand(Hands[0]);
 
-            Assert.AreEqual(Poker.Calculator.HandRanks.Pair, C.Rank);
+            Assert.AreEqual(Poker.HandRanks.Pair, C.Rank);
         }
 
         [TestMethod]
@@ -116,7 +116,7 @@ namespace Poker.Tests
             string[] Hands = { "HKHQH0HJHA" };
             Poker.Calculator.CalculatedHand C = Calc.CalculateHand(Hands[0]);
 
-            Assert.AreEqual(Poker.Calculator.HandRanks.RoyalFlush, C.Rank);
+            Assert.AreEqual(Poker.HandRanks.RoyalFlush, C.Rank);
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace Poker.Tests
             string[] Hands = { "H7H5H6H8H4" };
             Poker.Calculator.CalculatedHand C = Calc.CalculateHand(Hands[0]);
 
-            Assert.AreEqual(Poker.Calculator.HandRanks.StraightFlush, C.Rank);
+            Assert.AreEqual(Poker.HandRanks.StraightFlush, C.Rank);
             Assert.AreEqual(8, C.HighCard);
         }
 
@@ -139,8 +139,8 @@ namespace Poker.Tests
             string[] Hands = { "HJHKSJCJDJ" };
             Poker.Calculator.CalculatedHand C = Calc.CalculateHand(Hands[0]);
 
-            Assert.AreEqual(Poker.Calculator.HandRanks.FourOfAKind, C.Rank);
-            Assert.AreEqual(11, C.HighCard);
+            Assert.AreEqual(Poker.HandRanks.FourOfAKind, C.Rank);
+            Assert.AreEqual(13, C.HighCard);
         }
     }
 }
