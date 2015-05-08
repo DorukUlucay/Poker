@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CalculateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DealerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Poker\Poker.csproj">

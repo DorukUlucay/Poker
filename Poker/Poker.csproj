@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculate.cs" />
+    <Compile Include="CalculatedHand.cs" />
+    <Compile Include="Dealer.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="HandCalculator.cs" />
     <Compile Include="enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

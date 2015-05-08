@@ -6,36 +6,39 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-    public class Calculator
+    public class HandCalculator
     {
-
         private bool _IsAceAlsoOne = false;
-        
-        public Calculator(bool IsAceAlsoOne)
+        Functions functions = new Functions();
+
+
+        /*
+         kickers how to:
+         * in flush - no kicker. all are kickers
+         * in straight - no kicker. high card
+         * four -   no kicker. high card
+         * three - rest two cards are kickers
+         * two pair - resting card is kicker
+         * pair - three kickers
+         * full house - x's over y's. 
+            -x's over the other hands x's
+            -if equals y's over other hands y's
+            -otherwise draw
+         * highcard -   all are kickers
+         
+         
+         
+         */
+
+
+        public HandCalculator(bool IsAceAlsoOne)
         {
             _IsAceAlsoOne = IsAceAlsoOne;
         }
 
-        public class CalculatedHand
-        {
-            
-            public HandRanks Rank;
-            public int HighCard;
-        }
-
-        //hands are a string array. it'll be json
-        public void CalculateHands(string[] Hands)
-        {
-            foreach (string Hand in Hands)
-            {
-                CalculateHand(Hand);
-            }
-        }
-
-
         public CalculatedHand CalculateHand(string Hand)
         {
-            string[] Cards =  Split(Hand, 2).ToArray();
+            string[] Cards =  functions.Split(Hand, 2).ToArray();
 
             bool flush = isFlush(Cards);
 
@@ -115,8 +118,6 @@ namespace Poker
             return CH;
         }
 
-
-
         public bool isFlush(string[] Cards)
         {
             char suite = 'N';
@@ -134,7 +135,6 @@ namespace Poker
 
             return isFlush;
         }
-
 
         public bool isStraight(int[] sorted)
         {
@@ -169,8 +169,6 @@ namespace Poker
                 return false;
             }
         }
-
-
 
         public bool isFullHouse(int[] sorted)
         {
@@ -241,7 +239,6 @@ namespace Poker
             }
         }
 
-
         public bool IsPair(int[] sorted)
         {
             var x = sorted.GroupBy(o => o);
@@ -261,13 +258,6 @@ namespace Poker
             {
                 return false;
             }
-        }
-
-
-        private IEnumerable<string> Split(string str, int chunkSize)
-        {
-            return Enumerable.Range(0, str.Length / chunkSize)
-                .Select(i => str.Substring(i * chunkSize, chunkSize));
         }
     }
 }
