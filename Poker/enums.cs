@@ -19,4 +19,12 @@ namespace Poker
         Pair=2,
         HighCard=1
     }
+
+    public enum Suites
+    { 
+        Hearts, 
+        Spades, 
+        Diamonds, 
+        Clubs
+    }
 }

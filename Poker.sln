@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker\Poker.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker.Tests", "Poker.Tests\Poker.Tests.csproj", "{369238FD-8948-4A83-9BC1-CF3E4CA88D63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormUI", "WinFormUI\WinFormUI.csproj", "{19110C22-C5DA-4A61-85F6-D1F276CAC093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{369238FD-8948-4A83-9BC1-CF3E4CA88D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{369238FD-8948-4A83-9BC1-CF3E4CA88D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{369238FD-8948-4A83-9BC1-CF3E4CA88D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19110C22-C5DA-4A61-85F6-D1F276CAC093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19110C22-C5DA-4A61-85F6-D1F276CAC093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19110C22-C5DA-4A61-85F6-D1F276CAC093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19110C22-C5DA-4A61-85F6-D1F276CAC093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
