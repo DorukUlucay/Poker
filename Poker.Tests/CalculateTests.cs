@@ -154,5 +154,31 @@ namespace Poker.Tests
             //Assert.AreEqual(Poker.HandRanks.FourOfAKind, C.Rank);
             //Assert.AreEqual(13, C.HighCard);
         }
+
+        [TestMethod]
+        public void CalculateHands_GivenA2345WithAceCountsAsOne_ExpectedStraight()
+        {
+            Poker.HandCalculator Calc = new HandCalculator(true);
+
+            string[] Hands = { "HAH5S4C3H2" };
+
+            CalculatedHand c = Calc.CalculateHand(Hands[0]);
+
+            Assert.AreEqual(Poker.HandRanks.Straight, c.Rank);
+            Assert.AreEqual(5, c.HighCard); //ace is one, so high card is five
+        }
+
+        [TestMethod]
+        public void CalculateHands_GivenA2345WithAceDoesNotCountAsOne_ExpectedHighCard()
+        {
+            Poker.HandCalculator Calc = new HandCalculator(false);
+
+            string[] Hands = { "HAH5S4C3H2" };
+
+            CalculatedHand c = Calc.CalculateHand(Hands[0]);
+
+            Assert.AreEqual(Poker.HandRanks.HighCard, c.Rank);
+            Assert.AreEqual(14, c.HighCard); //since ace is not one, its not straight. also ace is high card
+        }
     }
 }

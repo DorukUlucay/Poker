@@ -66,7 +66,16 @@ namespace Poker
             Array.Sort(nums);
 
             bool Straight = isStraight(nums);
-            int HighCard = nums[4];
+            int HighCard = 0;
+
+            if (Straight && nums[4] == 14 && _IsAceAlsoOne)
+            {
+                HighCard = nums[3];
+            }
+            else
+            {
+                HighCard = nums[4];
+            }
 
             CalculatedHand CH = new CalculatedHand();
             CH.HighCard = HighCard;
@@ -138,14 +147,31 @@ namespace Poker
 
         public bool isStraight(int[] sorted)
         {
-            if (sorted[4]-1 == sorted[3]
-                && sorted[3] - 1 == sorted[2]
-                && sorted[2] - 1 == sorted[1]
-                && sorted[1] - 1 == sorted[0]
-                )
+            if (_IsAceAlsoOne)
             {
-                return true;
+                if (sorted[4] == 14
+            && sorted[3] - 1 == sorted[2]
+            && sorted[2] - 1 == sorted[1]
+            && sorted[1] - 1 == sorted[0]
+            )
+                {
+                    return true;
+                }
+                return false;
             }
+            else
+            {
+                if (sorted[4] - 1 == sorted[3]
+            && sorted[3] - 1 == sorted[2]
+            && sorted[2] - 1 == sorted[1]
+            && sorted[1] - 1 == sorted[0]
+            )
+                {
+                    return true;
+                }
+                return false;
+            }
+
             return false;
         }
 
