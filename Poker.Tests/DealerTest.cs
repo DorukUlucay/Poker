@@ -7,10 +7,12 @@ namespace Poker.Tests
     public class DealerTest
     {
         [TestMethod]
-        public void CalculateHands_GivenTwoPairAndFourOfAKind_ExptectedWinnerIsSecondHand()
+        public void CalculateHands_GivenPairAndFourOfAKind_ExptectedWinnerIsSecondHand()
         {
             Dealer D = new Dealer();
-            D.CalculateHands(new string[] { "H2H7D6SJCJ", "HKHJDKSKCK" });
+            CalculatedHand Winner = D.CalculateHands(new string[] { "H2H7D6SJCJ", "HKHJDKSKCK" });
+
+            Assert.AreEqual(HandRanks.FourOfAKind, Winner.Rank);
 
         }
     }
